@@ -1,7 +1,7 @@
 defmodule RumblWeb.Router do
   use RumblWeb, :router
 
-  pipeline :bro wser do
+  pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
     plug :fetch_live_flash
