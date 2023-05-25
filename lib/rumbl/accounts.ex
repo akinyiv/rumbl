@@ -4,6 +4,7 @@ defmodule Rumbl.Accounts do
   """
   alias Rumbl.Repo
   alias Rumbl.Accounts.User
+  alias Rumbl.Accounts.Notification
 
   def list_users do
     [
@@ -33,6 +34,12 @@ defmodule Rumbl.Accounts do
   def create_user(attrs \\ %{}) do
     %User{}
     |>User.changeset(attrs)
+    |>Repo.insert()
+  end
+
+  def create_notification(attrs \\ %{}) do
+    %Notification{}
+    |>Notification.changeset(attrs)
     |>Repo.insert()
   end
 
